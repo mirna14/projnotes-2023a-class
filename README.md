@@ -10,3 +10,4 @@ Class project from the FullStack Web Development Subject
 This project will be development using ECMAScript 6 (ES6) and run on a Node.js runtime environment, MongoDB will be utilized for database managment, and Handlebars will be employed as the engine
 
 ## Project Notes
+1. [Project Creation](https://github.com/mirna14/projnotes-2023a-class/tree/main)
