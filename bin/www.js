@@ -3,9 +3,13 @@
 /**
  * Module dependencies.
  */
-
+//Importing the server logic
+// require is used to import code from an external file
 var app = require('../app');
-var debug = require('debug')('projnotes-2023a-class:server');
+// importing an external dependency
+var debug = ('debug')('projnotes');
+// Module that allows to communicate with a client
+// using HTTP protocol
 var http = require('http');
 
 /**
@@ -13,20 +17,23 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+// Store the port info in the app
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
-
+var server = http.createServer(app);  (req, res) => {
+  acciones }
 /**
  * Listen on provided port, on all network interfaces.
  */
 
+// Specifying the port where the server will be listening
 server.listen(port);
 server.on('error', onError);
+// Attaching Callbacks to events
 server.on('listening', onListening);
 
 /**
@@ -86,5 +93,6 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  debug(`⭐⭐Listening on ${process.env.APP_URL}:${addr.port}
+  ⭐⭐`);
 }
