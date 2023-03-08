@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    
-    "start": "PORT=3000 APP_URL='http://localhost' DEBUG=projnotes node ./bin/www"
+    "start": "PORT=3000 APP_URL='http://localhost' DEBUG=projnotes node .server/bin/www",
+    "dev": "PORT=3000 APP_URL='http://localhost:' DEBUG=projnotes babel-watch --watch ./Server/views ./Server/bin/www"
   },
+  
   "dependencies": {
     "cookie-parser": "~1.4.6",
     "debug": "~4.3.4",
@@ -13,5 +14,11 @@
     "hbs": "~4.2.0",
     "http-errors": "~2.0.0",
     "morgan": "~1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "babel-watch": "^7.7.2"
   }
 }
