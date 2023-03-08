@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "PORT=3000 APP_URL='http://localhost' DEBUG=projnotes node .server/bin/www",
-    "dev": "PORT=3000 APP_URL='http://localhost:' DEBUG=projnotes babel-watch --watch ./Server/views ./Server/bin/www"
+    "dev": "PORT=3000 APP_URL='http://localhost:' DEBUG=projnotes babel-watch --watch ./server/views ./server/bin/www"
   },
   
   "dependencies": {
