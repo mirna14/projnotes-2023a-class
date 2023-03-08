@@ -11,16 +11,34 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter =  require('./routes/api');
 
+//We are craeting the express instance 
 var app = express();
 
 // view engine setup
+// We are delcaring the localization of the views
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+//que es app es una instancia de express
+//Register midleware
+// app.use ((req,res,next) => {
+// console.log("✌ se ha recivido una peticion");
+// next();
+// });
+// app.use((req,res,next)=>{
+//   console.log(`🙌 IP: ${req.ip}`);
+//   next();
+// }); 
+
+//Log all received requests
 app.use(logger('dev'));
+// Parse request data into json
 app.use(express.json());
+// Decode url info
 app.use(express.urlencoded({ extended: false }));
+//Parse client cookies into json
 app.use(cookieParser());
+// Set up the static file server
 app.use(express.static(path.join(__dirname, 'public')));
 
 
