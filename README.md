@@ -11,3 +11,20 @@ This project will be development using ECMAScript 6 (ES6) and run on a Node.js r
 
 ## Project Notes
 1. [Project Creation](https://github.com/mirna14/projnotes-2023a-class/tree/main)
+
+2. Repository Creation
+ This repository was created at workspace github The first was step create  acount on github and create an user 
+ next create a new repository named "projnotes-2023A-class" using a readme file license a gitignore
+
+3. Creating dedicated Backend directory
+
+4. Adding Babel
+
+Babel is a compiler for JavaScript, what it does is transform modern code into code that is understood by older browsers.
+
+Was installed babel dependencies and Create a file named ".baberl.rc" for configured, this changed look at the package.jason
+
+5. Updating to ES6
+
+We going update our  code a ES6 for code were modern 
+starting changing "var" for "import" and using arrow functions

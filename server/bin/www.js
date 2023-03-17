@@ -3,14 +3,14 @@
 /**
  * Module dependencies.
  */
-//Importing the server logic
-// require is used to import code from an external file
+// Importing the server logic
+// require is used to import code from an external file 
 import app from '../app';
-// importing an external dependency
-import debug from ('debug')('projnotes');
+// Importing an external dependecy
+import Debug from 'debug';
 const debug = Debug('projnotes')
 // Module that allows to communicate with a client
-// using HTTP protocol
+// usign HTTP protocol
 import http from 'http';
 
 /**
@@ -25,15 +25,15 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app); // (req, res) => {acciones }
+const server = http.createServer(app); //  (req, res) => { acciones }
+//(req,res)=>{Acciones}
 /**
  * Listen on provided port, on all network interfaces.
  */
-
 // Specifying the port where the server will be listening
 server.listen(port);
+// Attaching Callbacks to events 
 server.on('error', onError);
-// Attaching Callbacks to events
 server.on('listening', onListening);
 
 /**
@@ -72,7 +72,7 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(`${bind} requires elevated privileges`);
+      console.error(bind + 'requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
@@ -93,6 +93,5 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? `pipe ${addr}`
     : `port ${addr.port}`;
-  debug(`⭐⭐Listening on ${process.env.APP_URL}:${addr.port}
-  ⭐⭐`);
+  debug(`⭐⭐ Listening on ${process.env.APP_URL}:${bind.port} ⭐⭐`);
 }

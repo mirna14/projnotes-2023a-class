@@ -1,50 +1,51 @@
-//helps to handle http-errors
 import createError from 'http-errors'
 // Import the Express Library
 import express from 'express';
 // Is a Core-Node library to manage system paths
 import path from 'path'
-//Helps to parse client cookies
+// Helps to parse client cookies
 import cookieParser from 'cookie-parser';
 // Library to log http communication
-import logger from 'morgan';
+import logger from 'morgan'
 
-//importing subroutes
-import indexRouter from './routes/index';
+// Importing subroutes
+import indexRouter from './routes/index' 
 import usersRouter from './routes/users';
 import apiRouter from './routes/api';
 
-//We are craeting the express instance 
+// We are creating the express instance
+//const app = express();
 const app = express();
 
 // view engine setup
 // We are delcaring the localization of the views
 app.set('views', path.join(__dirname, 'views'));
+// Setting up the template engine
 app.set('view engine', 'hbs');
 
-
-
-//Log all received requests
+// Registering middlewares
+// Log all received requests
 app.use(logger('dev'));
 // Parse request data into json
 app.use(express.json());
 // Decode url info
 app.use(express.urlencoded({ extended: false }));
-//Parse client cookies into json
+// Parse client cookies into json
 app.use(cookieParser());
 // Set up the static file server
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // Registering routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api', apiRouter);
+app.use('/api',apiRouter);
 
 // catch 404 and forward to error handler
-app.use((req, res, next)  => {
+app.use((req, res, next)=> {
   next(createError(404));
-});
+
+})
+
 
 // error handler
 app.use((err, req, res, next) => {

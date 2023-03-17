@@ -1,9 +1,10 @@
-import express from'express';
+import express from 'express';
 const { Router } = express;
+
 const router = Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/',(req, res, next)=>{
   res.send('respond with a resource');
 });
 

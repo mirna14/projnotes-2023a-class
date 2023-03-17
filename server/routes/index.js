@@ -1,5 +1,6 @@
 import express from 'express';
 const { Router } = express;
+
 const router = Router();
 
 /* GET home page. */
@@ -20,7 +21,6 @@ router.get('/author', (req, res) => {
   };
   //seding the view-model to be rendered by a View
   res.render("author", author)
-
 });
 
 export default router;
