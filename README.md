@@ -27,4 +27,7 @@ Was installed babel dependencies and Create a file named ".baberl.rc" for config
 5. Updating to ES6
 
 We going update our  code a ES6 for code were modern 
-starting changing "var" for "import" and using arrow functions
+starting changing "const" for "import" and using arrow functions in  code
+
+Before  update  at ES6 this project run without  any problem, the update dosnt detected that "import" the app in file www and i cant resolved that problem 😥
+it is the reason for dosnt i can advanced in my project 
