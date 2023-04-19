@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Ignoring client files
+/public/styles/app.css
+/public/bundle.js
