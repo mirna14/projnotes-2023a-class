@@ -21,7 +21,10 @@ import WebpackHotMiddleware from 'webpack-hot-middleware';
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
 
-// Importi g winston logger
+// Importando el configurador del motor de plantillas
+import configTemplateEngine from './config/templateEngine';
+
+// Importing winston logger
 import log from './config/winston';
 
 // Creando variable del directorio raiz
@@ -62,10 +65,11 @@ if (nodeEnviroment === 'development') {
 }
 
 // view engine setup
+configTemplateEngine(app);
 // We are delcaring the localization of the views
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
 // Setting up the template engine
-app.set('view engine', 'hbs');
+// app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received requests
