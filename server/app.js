@@ -14,15 +14,15 @@ import indexRouter from '@server/routes/index';
 import usersRouter from '@server/routes/users';
 import apiRouter from '@server/routes/api';
 
+// Importing template-engine
+import configTemplateEngine from '@server/config/templateEngine';
+
 // Setting webpack modules
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
-
-// Importando el configurador del motor de plantillas
-import configTemplateEngine from './config/templateEngine';
 
 // Importing winston logger
 import log from './config/winston';
@@ -50,6 +50,9 @@ if (nodeEnviroment === 'development') {
     'webpack-hot-middleware/client?reload=true$timeout=1000',
     webpackConfig.entry,
   ];
+  // Agregar el plugin a la configuración de desarrollo
+  // de webpack
+  webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   // Creating the bundler
   const bundle = webpack(webpackConfig);
   // Enabling the webpack middleware
@@ -69,11 +72,11 @@ configTemplateEngine(app);
 // We are delcaring the localization of the views
 // app.set('views', path.join(__dirname, 'views'));
 // Setting up the template engine
-// app.set('view engine', 'hbs');
+app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received requests
-app.use(morgan('dev', { stream: log.stream }));
+app.use(morgan('combined', { stream: log.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode url info
