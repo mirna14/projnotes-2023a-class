@@ -12,6 +12,8 @@ import app from '../app';
 
 // Importing winston logger
 import log from '../config/winston';
+// Importing config Keys
+import configKeys from '../config/configKeys';
 
 /**
  * Normalize a port into a number, string, or false.
@@ -37,7 +39,7 @@ function normalizePort(val) {
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(configKeys.port);
 // Store the port info in the app
 app.set('port', port);
 
